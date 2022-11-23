@@ -1,38 +1,114 @@
-.App {
-  text-align: center;
+.app {
+    margin: 0 auto;
+    padding: 5%;
+    font-family: 'Courier New', Courier, monospace;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.container {
+    background: #eee;
+    padding: 20px;
+    position: relative;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.anchor {
+    position: absolute;
+    /* height as padding in relative parrent div (.container) */
+    height: 20px;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+.block {
+    padding: 20px;
+    border-radius: 5px;
+    position: sticky;
+    top: 0px;
+    transition: 0.3s;
+    color: white;
+    display: flex;
+    background-color: rgb(219, 105, 105);
+}
+
+.item {
+    display: flex;
+    flex-direction: column;
+}
+
+.title {
+    font-size: 30px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.title.minimized {
+    font-size: 20px;
+    margin-left: 20px;
+}
+
+.subtitle {
+    font-size: 17px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.content {
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+.items {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex: 1;
+    transition: 0.3s;
+}
+
+.items.minimized {
+    margin-left: 50px;
+}
+
+.blockTitle {
+    font-size: 20px;
+    font-weight: bold;
+    transition: 0.3s;
+    margin-bottom: 20px;
+}
+
+.blockTitle.minimized {
+    margin-bottom: 0;
+}
+
+.hide {
+    opacity: 0;
+    font-size: 0px;
+    margin: 0;
+
+    transition-duration: 0.3s, 0.3s, 0.3s;
+    transition-delay: 0s, 0.15s, 0.15s;
+    transition-property: opacity, font-size, margin;
+}
+
+@keyframes hide-frame {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+
+  }
+  100% {
+    opacity: 1;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.hide-2 {
+  animation: hide-frame 0.6s linear;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.spacer {
+    height: 150px;
+    margin-top: 50px;
+    background-color: rgb(112, 33, 68);
 }
