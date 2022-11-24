@@ -38,12 +38,41 @@
 .title {
     font-size: 30px;
     font-weight: bold;
-    transition: 0.3s;
+    transition: 0.6s;
+    transition-delay: 0s;
+    opacity: 1;
+}
+
+@keyframes opacity-frame {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes font-size-frame {
+  0% {
+    font-size: 30px;
+  }
+  50% {
+    font-size: 0px;
+  }
+  100% {
+    font-size: 20px;
+  }
 }
 
 .title.minimized {
     font-size: 20px;
     margin-left: 20px;
+    transition-delay: 0.3s;
+    animation-name: opacity-frame, font-size-frame;
+    animation-duration: 0.8s, 0.6s;
 }
 
 .subtitle {
@@ -63,10 +92,12 @@
     justify-content: space-between;
     flex: 1;
     transition: 0.3s;
+    transition-delay: 0s;
 }
 
 .items.minimized {
     margin-left: 50px;
+    transition-delay: 0.3s;
 }
 
 .blockTitle {
@@ -85,26 +116,9 @@
     font-size: 0px;
     margin: 0;
 
-    transition-duration: 0.3s, 0.3s, 0.3s;
-    transition-delay: 0s, 0.15s, 0.15s;
+    transition-duration: 0.3s, 0.6s, 0.6s;
+    transition-delay: 0s, 0s, 0s;
     transition-property: opacity, font-size, margin;
-}
-
-@keyframes hide-frame {
-  0% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0;
-
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
-.hide-2 {
-  animation: hide-frame 0.6s linear;
 }
 
 .spacer {

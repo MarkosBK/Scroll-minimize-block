@@ -5,7 +5,7 @@ import useDetectElement from './hooks/use-detect-element';
 function BlockItem({minimized}) {
   return (
     <div className="item">
-      <span className={`title ${minimized ? 'minimized hide-2' : ''}`}>120.000</span>
+      <span className={`title ${minimized ? 'minimized' : ''}`}>120.000</span>
       <span className={`subtitle ${minimized ? 'hide' : ''}`}>Occaecat nostrud proident ad nulla</span>
       <span className={`content ${minimized ? 'hide' : ''}`}>Occaecat nostrud proident ad nulla cupidatat sint nostrud dolore commodo dolor cupidatat minim ut.</span>
     </div>
